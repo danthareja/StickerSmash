@@ -24,6 +24,20 @@ export default function App() {
     }
   };
 
+  // const takeImageAsync = async () => {
+  //   await ImagePicker.requestCameraPermissionsAsync(); // TODO: Learn about permissions
+  //   let result = await ImagePicker.launchCameraAsync({
+  //     allowsEditing: true,
+  //     quality: 1,
+  //   });
+
+  //   if (!result.canceled) {
+  //     setSelectedImage(result.assets[0].uri);
+  //   } else {
+  //     alert("You did not take any photo.");
+  //   }
+  // }
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -31,6 +45,7 @@ export default function App() {
       </View>
       <View style={styles.footerContainer}>
         <Button label="Choose a photo" theme="primary" onPress={pickImageAsync}/>
+        {/* <Button label="Take a photo" theme="primary" onPress={takeImageAsync}/> */}
         <Button label="Use this photo" />
       </View>
       <StatusBar style="auto" />
