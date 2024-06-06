@@ -115,7 +115,7 @@ export default function App() {
       ) : (
         <View style={styles.footerContainer}>
           <Button
-            label="Choose a photo"
+            label="Upload a photo"
             theme="primary"
             onPress={pickImageAsync}
           />
