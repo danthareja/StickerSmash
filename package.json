@@ -7,16 +7,19 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "dev": "APP_VARIANT=development npx expo start"
+    "dev": "APP_VARIANT=development npx expo start",
+    "test": "jest"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
     "@expo/vector-icons": "^14.0.0",
     "dom-to-image": "^2.6.0",
     "expo": "~51.0.10",
+    "expo-dev-client": "~4.0.15",
     "expo-image-picker": "~15.0.5",
     "expo-media-library": "~16.0.3",
     "expo-status-bar": "~1.12.1",
+    "expo-updates": "~0.25.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.1",
@@ -24,11 +27,23 @@
     "react-native-reanimated": "~3.10.1",
     "react-native-view-shot": "3.8.0",
     "react-native-web": "~0.19.10",
-    "expo-dev-client": "~4.0.15",
-    "expo-updates": "~0.25.15"
+    "react-test-renderer": "18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@testing-library/react-native": "^12.5.1",
+    "jest": "^29.7.0",
+    "jest-expo": "^51.0.2"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js",
+      "<rootDir>/jestSetup.js"
+    ]
   },
   "private": true
 }
